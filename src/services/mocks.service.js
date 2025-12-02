@@ -14,4 +14,12 @@ export class MockService {
     }));
     return users;
   }
+  static async mockingPets(cantidad = 50) {
+    const pets = Array.from({ length: cantidad }).map(() => ({
+      name: faker.animal.dog(),
+      type: faker.helpers.arrayElement(['dog', 'cat', 'bird', 'fish']),
+      age: faker.number.int({ min: 1, max: 15 }),
+    }));
+    return pets;
+  }
 }

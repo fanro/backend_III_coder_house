@@ -1,4 +1,5 @@
 import { MockService } from '../services/mocks.service.js';
+import { PetService } from '../services/pet.service.js';
 import { UserService } from '../services/user.service.js';
 
 export const mockController = {
@@ -22,10 +23,13 @@ export const mockController = {
         });
       }
 
-      const usersModel = await MockService.mockingUsers(users);
-      const usuarios = await UserService.insertManyUsers(usersModel);
+      const usersMoking = await MockService.mockingUsers(users);
+      const usuarios = await UserService.insertManyUsers(usersMoking);
 
-      res.json(usuarios);
+      const petsMocking = await MockService.mockingPets(pets);
+      const mascotas = await PetService.insertManyPets(petsMocking);
+
+      res.json({ usuarios, mascotas });
     } catch (error) {
       console.error('Error al generar datos:', error);
       res.status(500).json({ error: 'Error al generar datos' });

@@ -4,6 +4,8 @@ import paginate from 'mongoose-paginate-v2';
 const petSchema = new mongoose.Schema({
   name: String,
   species: String,
+  age: Number,
+  type: String,
   owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
 });
 

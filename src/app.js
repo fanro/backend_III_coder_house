@@ -4,6 +4,7 @@ import { conectarDB } from './config/db.js';
 import { logger } from './middlewares/logger.js';
 import mocksRouter from './routes/mocks.router.js';
 import userRouter from './routes/user.router.js';
+import petRouter from './routes/pet.router.js';
 
 const app = express();
 app.use(express.json());
@@ -12,6 +13,8 @@ app.use(logger);
 
 app.use('/api/mocks', mocksRouter);
 app.use('/api/users', userRouter);
+app.use('/api/pets', petRouter);
+
 const PORT = config.PORT || 3000;
 
 const server = app.listen(PORT, () => {
