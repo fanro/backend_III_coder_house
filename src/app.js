@@ -2,7 +2,7 @@ import express from 'express';
 import { config } from './config/config.js';
 import { conectarDB } from './config/db.js';
 import { logger } from './middlewares/logger.js';
-import mocksRouter from './routes/mocks.js';
+import mocksRouter from './routes/mocks.router.js';
 
 const app = express();
 app.use(express.json());
