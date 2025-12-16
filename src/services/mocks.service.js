@@ -18,6 +18,7 @@ export class MockService {
     const pets = Array.from({ length: cantidad }).map(() => ({
       name: faker.animal.dog(),
       type: faker.helpers.arrayElement(['dog', 'cat', 'bird', 'fish']),
+      species: faker.animal.type(),
       age: faker.number.int({ min: 1, max: 15 }),
     }));
     return pets;
