@@ -3,13 +3,13 @@ import { expect } from 'chai';
 import app from '../src/app.js';
 
 describe('Mocks API', () => {
-  it('GET /api/mocks/mockingusers → debe generar 50 usuarios', async () => {
+  it('GET /api/mocks/mockingusers → debe generar 50 usuarios, no persiste', async () => {
     const res = await request(app).get('/api/mocks/mockingusers');
     expect(res.status).to.equal(200);
     expect(res.body).to.be.an('array').with.length(50);
   });
 
-  it('POST /api/mocks/generateData → debe insertar usuarios y mascotas', async () => {
+  it('POST /api/mocks/generateData → debe borrar usuarios y mascotas existentes antes de insertar nuevos datos', async () => {
     // borrar usuario y mascotas antes de la prueba
     const resDeleteUsers = await request(app).delete('/api/users/all');
     expect(resDeleteUsers.status).to.equal(200);
