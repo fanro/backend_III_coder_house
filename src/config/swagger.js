@@ -3,7 +3,8 @@ export const swaggerSpecs = {
   info: {
     title: 'Backend III - Proyecto Final - API Mocks',
     version: '1.0.0',
-    description: 'API para generar y consultar datos mock (users & pets)',
+    description:
+      'API para la generación de datos mock de usuarios y mascotas, así como la gestión de los mismos.',
   },
 
   servers: [
