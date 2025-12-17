@@ -1,3 +1,25 @@
+# Backend III - CoderHouse
+
+## Mocks API => Node.js + Express
+
+Proyecto final del curso backend III de CoderHouse. Se implementa una API REST que genera usuarios y mascotas mocks mediante la libreria Facker.
+Se utiliza persistencia en MongoDB
+
+Endpoints disponibles:
+
+- `/api/mocks/mockingusers`
+- `/api/mocks/generateData`
+- `/api/users`
+- `/api/pets`
+
+Documentacion de API mediante Swagger
+
+- `/api/docs`
+
+Test funcionales mediante Mocha + Chai + Supertest
+
+npm run test
+
 # 🐳 Docker Image - Backend III Coder House
 
 ## Descargar y Ejecutar
