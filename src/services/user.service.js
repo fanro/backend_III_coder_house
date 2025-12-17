@@ -8,4 +8,8 @@ export class UserService {
   static async insertManyUsers(usuarios) {
     return await usersModel.insertMany(usuarios);
   }
+
+  static async deleteAllUsers() {
+    return await usersModel.deleteMany({});
+  }
 }

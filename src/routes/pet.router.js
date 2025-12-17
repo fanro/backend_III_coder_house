@@ -5,4 +5,6 @@ const router = Router();
 
 router.get('/', petController.getPets);
 
+router.delete('/all', petController.deleteAllPets);
+
 export default router;

@@ -8,4 +8,8 @@ export class PetService {
   static async insertManyPets(pets) {
     return await petsModel.insertMany(pets);
   }
+
+  static async deleteAllPets() {
+    return await petsModel.deleteMany({});
+  }
 }
